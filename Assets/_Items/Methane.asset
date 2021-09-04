@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 674fb2e7dc1b0454f8b9e5637a863f06, type: 3}
+  m_Name: Methane
+  m_EditorClassIdentifier: 
+  name: Methane
+  icon: {fileID: 21300000, guid: d20dcc746803c46548082c16644bf92c, type: 3}
+  isDefaultItem: 0
+  itemID: 5
+  isCatalyst: 0
+  isReagent: 1
+  functionalGroups: alkane
+  properties: hydrophobic, gaseous, toxic
+  levelUnlocked: 0

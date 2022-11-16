@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Reagent 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e416cda4e37b143b496ecd4786753d79, type: 2}
+  m_sharedMaterial: {fileID: 6217176306575783974, guid: e416cda4e37b143b496ecd4786753d79, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -284,7 +284,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectionRing: {fileID: 6369230294378683917}
-  reagent1: {fileID: 0}
   icon: {fileID: 5989626977683792289}
   iconObject: {fileID: 8928994247417757701}
   reagentName: {fileID: 3353579747577668810}
@@ -293,9 +292,9 @@ MonoBehaviour:
   Reagent1: {fileID: 0}
   Reagent2: {fileID: 0}
   Catalyst: {fileID: 0}
+  items: []
   item: {fileID: 0}
   isSelected: 0
-  items: []
 --- !u!1 &6369230294378683917
 GameObject:
   m_ObjectHideFlags: 0

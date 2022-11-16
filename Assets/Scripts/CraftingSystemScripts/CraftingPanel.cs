@@ -23,17 +23,76 @@ public class CraftingPanel : MonoBehaviour
     [SerializeField] List<Item> reagent2;
     [SerializeField] List<Item> catalyst;
 
+    [SerializeField] int selectionNumber;
+    [SerializeField] Button input1;
+    [SerializeField] Button input2;
+    [SerializeField] Button input3;
+
+    [SerializeField] GameObject selectionRing1;
+    [SerializeField] GameObject selectionRing2;
+    [SerializeField] GameObject selectionRing3;
+
     [SerializeField] List<Recipes> recipes = new List<Recipes>();
 
     //public List<Item> reagents = new List<Item>();
 
+    //Dictionary<Button, int> selectionRings = new Dictionary<Button, int>();
+
+
+    //---section determining singular selection---
+    private void Start()
+    {
+        /*selectionRings.Add(input1, 1);
+        selectionRings.Add(input2, 2);
+        selectionRings.Add(input3, 3);*/
+
+        input1.onClick.AddListener(selected1);
+        input2.onClick.AddListener(selected2);
+        input3.onClick.AddListener(selected3);
+    }
+
+    private void selected1()
+    {
+        selectionNumber = 1;
+    }
+
+    private void selected2()
+    {
+        selectionNumber = 2;
+    }
+
+    private void selected3()
+    {
+        selectionNumber = 3;
+    }
+
     private void Update()
     {
+        
+        switch (selectionNumber)
+        {
+            case 1:
+                selectionRing2.SetActive(false);
+                selectionRing3.SetActive(false);
+                break;
+            case 2:
+                selectionRing1.SetActive(false);
+                selectionRing3.SetActive(false);
+                break;
+            case 3:
+                selectionRing1.SetActive(false);
+                selectionRing2.SetActive(false);
+                break;
+        }
+
+        //-----------------------------------------
+
         reagent1 = Reagent1.items;
 
         reagent2 = Reagent2.items;
 
         catalyst = Catalyst.items;
+
     }
 
     public void Combine()

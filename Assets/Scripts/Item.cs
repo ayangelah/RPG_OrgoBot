@@ -18,5 +18,4 @@ public class Item : ScriptableObject
     public int electronucleophilicity;
     [Range(1, 5)]
     public int stability;
-
 }

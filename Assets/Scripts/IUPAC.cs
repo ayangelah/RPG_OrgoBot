@@ -41,6 +41,7 @@ public class IUPAC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_name.text = longestChain[script.molecule.getLongestChain()] + bondOrder[script.molecule.getBondOrder()];
+        if (script.molecule.getLongestChain() != 0)
+            m_name.text = longestChain[script.molecule.getLongestChain()] + bondOrder[script.molecule.getBondOrder()];
     }
 }

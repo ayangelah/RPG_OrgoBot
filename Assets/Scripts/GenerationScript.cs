@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class GenerationScript : MonoBehaviour
 {
@@ -15,9 +16,8 @@ public class GenerationScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && IsMouseOverUI())
         {
-            Debug.Log("created an atomprefab");
             //ui instantiation
             Vector3 mousepos = Input.mousePosition;
             var atomObject = Instantiate(atomPrefab, position: mousepos, Quaternion.identity);
@@ -25,5 +25,10 @@ public class GenerationScript : MonoBehaviour
             Atom atom = new Atom(atomObject, "carbon", mousepos.x, mousepos.y);
             molecule.addAtom(atom);
         }
+    }
+
+    private bool IsMouseOverUI()
+    {
+        return EventSystem.current.IsPointerOverGameObject();
     }
 }

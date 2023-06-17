@@ -35,7 +35,7 @@ public class IUPAC : MonoBehaviour
     void Start()
     {
         Molecule m_molecule = script.molecule;
-        m_name.text = "blah";
+        m_name.text = "[add an atom]";
     }
 
     // Update is called once per frame

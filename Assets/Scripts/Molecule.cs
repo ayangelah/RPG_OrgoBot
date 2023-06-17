@@ -6,6 +6,7 @@ public class Molecule
 {
     int[,] moleculeArray;
     List<Atom> atoms = new List<Atom>();
+    public List<Atom> longestchain = new List<Atom>();
 
     public Molecule() { }
 

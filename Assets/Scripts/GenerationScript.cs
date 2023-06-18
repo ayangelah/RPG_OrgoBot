@@ -7,7 +7,8 @@ using UnityEngine.EventSystems;
 public class GenerationScript : MonoBehaviour
 {
     public GameObject atomPrefab;
-    public Molecule molecule = new Molecule();
+    public GameObject bondPrefab;
+    public GameObject moleculePrefab;
 
     private void Start()
     {
@@ -18,12 +19,25 @@ public class GenerationScript : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0) && IsMouseOverUI())
         {
-            //ui instantiation
+            //instantiate an atom
             Vector3 mousepos = Input.mousePosition;
             var atomObject = Instantiate(atomPrefab, position: mousepos, Quaternion.identity);
             atomObject.transform.SetParent(gameObject.transform);
-            Atom atom = new Atom(atomObject, "carbon", mousepos.x, mousepos.y);
-            molecule.addAtom(atom);
+            atomObject.gameObject.AddComponent<Atom>();
+            var atomscript = atomObject.gameObject.GetComponent<Atom>();
+            atomscript.setAtom("carbon", mousepos.x, mousepos.y);
+
+            //instantiate a molecule
+            var moleculeObject = Instantiate(moleculePrefab, position: mousepos, Quaternion.identity);
+            atomscript.setMolecule(moleculeObject);
+            moleculeObject.transform.SetParent(gameObject.transform);
+            moleculeObject.gameObject.AddComponent<Molecule>();
+            var molscript = moleculeObject.gameObject.GetComponent<Molecule>();
+            molscript.addAtom(atomObject);
+        }
+
+        if(Input.GetMouseButtonDown(0))
+        {
         }
     }
 

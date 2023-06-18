@@ -32,16 +32,16 @@ public class IUPAC : MonoBehaviour
     };
 
     // Start is called before the first frame update
-    void Start()
-    {
-        Molecule m_molecule = script.molecule;
-        m_name.text = "[add an atom]";
-    }
+    //void Start()
+    //{
+    //    Molecule m_molecule = script.molecule;
+    //    m_name.text = "[add an atom]";
+    //}
 
     // Update is called once per frame
-    void Update()
-    {
-        if (script.molecule.getLongestChain() != 0)
-            m_name.text = longestChain[script.molecule.getLongestChain()] + bondOrder[script.molecule.getBondOrder()];
-    }
+    //void Update()
+    //{
+    //    if (script.molecule.getLongestChain() != 0)
+    //        m_name.text = longestChain[script.molecule.getLongestChain()] + bondOrder[script.molecule.getBondOrder()];
+    //}
 }
